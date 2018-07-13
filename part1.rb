@@ -20,7 +20,9 @@ end
 
 
 def remove_nth_from_end(head, n)
-  backtrack(head, n)
+  if backtrack(head, n)+1 == n
+    head = head.next
+  end
   head
 end
 
