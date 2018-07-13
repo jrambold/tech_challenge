@@ -27,7 +27,7 @@ end
 def backtrack(node, index)
   count = 0
   if node.next
-    count = backtrack(node, index) + 1
+    count = backtrack(node.next, index) + 1
   else
     return 0
   end
@@ -35,4 +35,25 @@ def backtrack(node, index)
     node.next = node.next.next
   end
   count
+end
+
+start = ListNode.new(1)
+node = start
+for i in 2..5
+  node.next = ListNode.new(i)
+  node = node.next
+end
+
+node = start
+for i in 0..4
+  puts node.val
+  node = node.next
+end
+
+remove_nth_from_end(start, 2)
+
+node = start
+for i in 0..3
+  puts node.val
+  node = node.next
 end
