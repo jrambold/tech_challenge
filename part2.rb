@@ -36,6 +36,14 @@ def bsearch(nums, low, high, target)
   elsif nums[mid] > target
     return bsearch(nums, low, mid, target)
   else
-    return bsearch(nums, mid, high, target)
+    return bsearch(nums, mid+1, high, target)
   end
 end
+
+puts "attempt 1"
+
+puts search_range([5,7,7,8,8,10], 8)
+
+puts "attempt 2"
+
+puts search_range([5,7,7,8,8,10], 6)
